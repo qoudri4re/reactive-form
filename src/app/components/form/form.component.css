@@ -1,0 +1,16 @@
+.container {
+  height: 97vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  width: 50%;
+}
+
+form .button {
+  width: 100%;
+}
+.container form .inline {
+  margin-top: 10px;
+}

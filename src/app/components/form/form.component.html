@@ -1,0 +1,101 @@
+<div class="container">
+  <form sui-form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div suiFormField>
+      <label>First Name</label>
+      <input
+        type="text"
+        name="first-name"
+        placeholder="First Name"
+        formControlName="firstName"
+      />
+    </div>
+    <div suiFormField>
+      <label>Last Name</label>
+      <input
+        type="text"
+        name="last-name"
+        placeholder="Last Name"
+        formControlName="lastName"
+      />
+    </div>
+    <div suiFormField>
+      <label>Email</label>
+      <input
+        type="text"
+        name="email"
+        placeholder="email"
+        formControlName="email"
+        (focusout)="validateField('email')"
+      />
+    </div>
+    <div suiFormField>
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="password"
+        formControlName="password"
+        (focusout)="validateField('password')"
+      />
+    </div>
+    <div suiFormField>
+      <label>Phone number</label>
+      <input
+        type="number"
+        name="phoneNumber"
+        placeholder="Phone number"
+        formControlName="phoneNumber"
+      />
+    </div>
+
+    <div sui-form>
+      <div suiFormField>
+        <label>Country</label>
+        <sui-select
+          [suiSearch]="true"
+          suiPlaceholder="Country"
+          [suiOptions]="countries"
+          formControlName="country"
+        ></sui-select>
+      </div>
+    </div>
+    <div sui-form>
+      <div suiFormField>
+        <label>Occupation</label>
+        <sui-select
+          [suiSearch]="true"
+          suiPlaceholder="Occupation"
+          [suiOptions]="occupations"
+          formControlName="occupation"
+        ></sui-select>
+      </div>
+    </div>
+
+    <div class="inline fields">
+      <label for="fruit">successful</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input
+            type="radio"
+            name="success"
+            value="true"
+            formControlName="success"
+          />
+          <label>True</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input
+            type="radio"
+            name="success"
+            value="false"
+            formControlName="success"
+          />
+          <label>False</label>
+        </div>
+      </div>
+    </div>
+    <button sui-button type="submit">Submit</button>
+  </form>
+</div>
